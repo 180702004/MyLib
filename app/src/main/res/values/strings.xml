@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyLib</string>
+    <string name="libraries_near_by">Libraries Near By</string>
 </resources>
