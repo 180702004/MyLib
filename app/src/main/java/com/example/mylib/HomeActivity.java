@@ -1,5 +1,6 @@
 package com.example.mylib;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(HomeActivity.this,"Clicked on" + arrayList.get(i),Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, LibraryActivity.class));
             }
         });
     }

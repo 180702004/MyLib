@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LibraryActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="141dp"
+        android:layout_height="116dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/library" />
+
+    <TextView
+        android:id="@+id/libraryName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Muğla Kütüphanesi"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/libraryHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="About Library"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/libraryAbout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Üniversitemizin eğitim – öğretim ve bilimsel faaliyetlerine yardımcı olmak amacıyla; her türlü bilimsel materyali sağlamak, düzenlemek ve hizmete sunmak üzere kurulmuş bir birimdir. Bu amacı gerçekleştirmek üzere; gereken her türlü bilgi ve belgeyi sağlar, sağlanan bilgi ve belgeleri bütün araştırmacıların ve öğrencilerin kullanımına sunulacak şekilde düzenler ve bilgi kaynaklarından en iyi şekilde faydalanmayı sağlamak amacıyla her düzeydeki kullanıcıya kurum içinde ve dışında hizmet verir."
+        app:layout_constraintBottom_toTopOf="@+id/libraryHours5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/libraryHeader"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/libraryHours"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:text="ShowOnMap"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSearchBook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/libraryHours2"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:text="Contact"
+        app:layout_constraintBottom_toTopOf="@+id/libraryHours"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/libraryHours3"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:text="NeedsMembership"
+        app:layout_constraintBottom_toTopOf="@+id/libraryHours2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/libraryHours4"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:text="StudyingArea"
+        app:layout_constraintBottom_toTopOf="@+id/libraryHours3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/libraryHours5"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:text="WorkingHours"
+        app:layout_constraintBottom_toTopOf="@+id/libraryHours4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSearchBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="144dp"
+        android:text="Look for a Book"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
