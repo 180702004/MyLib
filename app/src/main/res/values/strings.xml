@@ -8,4 +8,5 @@
     <string name="membership_needed">Membership Needed: </string>
     <string name="studying_area">Studying area: </string>
     <string name="working_hours">Working Hours: </string>
+    <string name="loginText">LOGIN</string>
 </resources>
