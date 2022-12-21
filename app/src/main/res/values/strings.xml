@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MyLib</string>
     <string name="libraries_near_by">Libraries Near By</string>
+    <string name="library_full_name">Library Full Name</string>
+    <string name="about_library">About Library</string>
+    <string name="location">Location: </string>
+    <string name="contact_number">Contact Number: </string>
+    <string name="membership_needed">Membership Needed: </string>
+    <string name="studying_area">Studying area: </string>
+    <string name="working_hours">Working Hours: </string>
 </resources>
