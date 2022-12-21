@@ -9,4 +9,5 @@
     <string name="studying_area">Studying area: </string>
     <string name="working_hours">Working Hours: </string>
     <string name="loginText">LOGIN</string>
+    <string name="login">Login</string>
 </resources>
