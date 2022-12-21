@@ -1,10 +1,14 @@
 package com.example.mylib;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,38 +16,52 @@ import com.bumptech.glide.Glide;
 
 public class LibraryActivity extends AppCompatActivity {
 
+    Button infoFragment, bookFragment;
+
+    FragmentLibraryBooks flb = new FragmentLibraryBooks();
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
+        infoFragment = (Button) findViewById(R.id.infoFragmentItem);
+        bookFragment = (Button) findViewById(R.id.bookFragmentItem);
+
         Library libraryPassed = (Library) getIntent().getSerializableExtra("class");
 
         TextView libraryFullName = this.findViewById(R.id.libraryName);
-        TextView libraryAbout = this.findViewById(R.id.libraryAbout);
-        TextView libraryHours = this.findViewById(R.id.libraryWorkingHours);
-        TextView libraryContactNumber = this.findViewById(R.id.libraryContact);
-        TextView libraryNeedsMembership = this.findViewById(R.id.libraryNeedsMembership);
-        TextView libraryStudyingArea = this.findViewById(R.id.libraryStudyingArea);
         ImageView imgView = this.findViewById(R.id.imageView);
         Glide.with(getApplicationContext()).load(libraryPassed.getImagePath()).into(imgView);
 
-
         libraryFullName.setText(libraryPassed.getFullName());
-        libraryAbout.setText(libraryPassed.getAbout());
-        libraryAbout.setMovementMethod(new ScrollingMovementMethod());
-        libraryContactNumber.setText(libraryPassed.getContactNumber());
-        libraryHours.setText(libraryPassed.getWorkingHours());
-        if (libraryPassed.isMembershipNeeded()){
-            libraryNeedsMembership.setText("Yes");
-        } else {
-            libraryNeedsMembership.setText("No");
-        }
-        if (libraryPassed.isStudyingAreaIncluded()){
-            libraryStudyingArea.setText("Yes");
-        } else {
-            libraryStudyingArea.setText("No");
-        }
+
+        loadInfoFragment(libraryPassed);
+
+        infoFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadInfoFragment(libraryPassed);
+            }
+        });
+
+        bookFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3,flb).commit();
+            }
+        });
     }
+
+    private void loadInfoFragment(Library libraryPassed) {
+        if(flb != null){
+            getSupportFragmentManager().beginTransaction().remove(flb).commit();
+        }
+        FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
+        FragmentLibraryAbout fragobj = FragmentLibraryAbout.newInstance(libraryPassed.getAbout(), libraryPassed.getWorkingHours(), libraryPassed.getContactNumber(), libraryPassed.getMembershipNeeded(), libraryPassed.getStudyingAreaIncluded());
+        fts.add(R.id.fragmentContainerView3,fragobj);
+        fts.commit();
+    }
+
 }

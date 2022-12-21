@@ -8,14 +8,22 @@ public class Library implements Serializable {
     private String contactNumber;
     private double longitude;
     private double latitude;
-    private boolean membershipNeeded;
-    private boolean studyingAreaIncluded;
+    private String membershipNeeded;
+    private String studyingAreaIncluded;
 
-    public boolean isStudyingAreaIncluded() {
+    public String getMembershipNeeded() {
+        return membershipNeeded;
+    }
+
+    public void setMembershipNeeded(String membershipNeeded) {
+        this.membershipNeeded = membershipNeeded;
+    }
+
+    public String getStudyingAreaIncluded() {
         return studyingAreaIncluded;
     }
 
-    public void setStudyingAreaIncluded(boolean studyingAreaIncluded) {
+    public void setStudyingAreaIncluded(String studyingAreaIncluded) {
         this.studyingAreaIncluded = studyingAreaIncluded;
     }
 
@@ -68,14 +76,6 @@ public class Library implements Serializable {
 
     public void setLatitude(double latitude) {
         this.latitude = latitude;
-    }
-
-    public boolean isMembershipNeeded() {
-        return membershipNeeded;
-    }
-
-    public void setMembershipNeeded(boolean membershipNeeded) {
-        this.membershipNeeded = membershipNeeded;
     }
 
     public String getWorkingHours() {

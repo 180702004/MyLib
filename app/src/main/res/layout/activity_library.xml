@@ -8,12 +8,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="141dp"
-        android:layout_height="116dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Photo of the library"
+        android:maxWidth="96dp"
+        android:maxHeight="96dp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/library"
-        android:contentDescription="Photo of the library" />
+        app:srcCompat="@drawable/library" />
 
     <TextView
         android:id="@+id/libraryName"
@@ -27,129 +31,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/libraryHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/about_library"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:scrollbars = "vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/libraryAbout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/workingHours"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/libraryHeader"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:text="@string/location"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSearchBook"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/libraryLocation"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSearchBook"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="com.example.mylib.FragmentLibraryAbout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/infoFragmentItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/location" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout="@layout/fragment_library_about" />
 
-    <TextView
-        android:id="@+id/contact"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:text="@string/contact_number"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/location"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/libraryContact"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/contact" />
-
-    <TextView
-        android:id="@+id/membershipNeeded"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:text="@string/membership_needed"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/contact"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/libraryNeedsMembership"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/contact"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/membershipNeeded" />
-
-    <TextView
-        android:id="@+id/studyingArea"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:text="@string/studying_area"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/membershipNeeded"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/libraryStudyingArea"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/membershipNeeded"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/studyingArea" />
-
-    <TextView
-        android:id="@+id/workingHours"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:text="@string/working_hours"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/studyingArea"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/libraryWorkingHours"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/studyingArea"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/workingHours" />
 
     <Button
-        android:id="@+id/buttonSearchBook"
-        android:layout_width="wrap_content"
+        android:id="@+id/infoFragmentItem"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Look for a Book"
+        android:text="Library Info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bookFragmentItem"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bookFragmentItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Books"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/infoFragmentItem" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
