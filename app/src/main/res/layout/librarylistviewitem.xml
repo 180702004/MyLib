@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!--Image view for displaying our image-->
         <ImageView
             android:id="@+id/photoOfLibrary"
             android:layout_width="100dp"
@@ -25,7 +24,6 @@
             android:backgroundTint="@color/white"
             android:padding="3dp" />
 
-        <!--Text view for displaying our text -->
         <TextView
             android:id="@+id/fullNameOfLibrary"
             android:layout_width="wrap_content"

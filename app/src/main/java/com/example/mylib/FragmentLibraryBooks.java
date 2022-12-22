@@ -1,26 +1,30 @@
 package com.example.mylib;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentLibraryBooks#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class FragmentLibraryBooks extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    ListView listView;
+    ArrayList<Book> bookArrayList;
+    FirebaseFirestore db;
+    AdapterBookList bookListAdapter;
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -28,15 +32,6 @@ public class FragmentLibraryBooks extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentLibraryBooks.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FragmentLibraryBooks newInstance(String param1, String param2) {
         FragmentLibraryBooks fragment = new FragmentLibraryBooks();
         Bundle args = new Bundle();
@@ -59,6 +54,30 @@ public class FragmentLibraryBooks extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_library_books, container, false);
+        View view = inflater.inflate(R.layout.fragment_library_books, container, false);
+        db = FirebaseFirestore.getInstance();
+        bookArrayList = new ArrayList<>();
+        listView = (ListView) view.findViewById(R.id.listViewOfBooks);
+        bookListAdapter = new AdapterBookList(getActivity(), bookArrayList);
+        loadDataInListview();
+        return view;
+    }
+
+    private void loadDataInListview() {
+
+        db.collection("books").get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                        for (DocumentSnapshot d : list) {
+                            Book book = d.toObject(Book.class);
+                            bookArrayList.add(book);
+                            bookListAdapter.notifyDataSetChanged();
+                        }
+                        listView.setAdapter(bookListAdapter);
+                    } else {
+                        Toast.makeText(getActivity(), "No data found in Database", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(e -> Toast.makeText(getActivity(), "Fail to load data..", Toast.LENGTH_SHORT).show());
     }
 }
