@@ -1,6 +1,9 @@
 package com.example.mylib;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,6 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     ArrayList<Library> libraryArrayList;
     FirebaseFirestore db;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,21 @@ public class HomeActivity extends AppCompatActivity {
         libraryArrayList = new ArrayList<>();
         db = FirebaseFirestore.getInstance();
         loadDataInListview();
+
+        Button btn = (Button)findViewById(R.id.loginButton);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+
+
+            }
+        });
+
+
+
+
     }
 
     private void loadDataInListview() {
@@ -44,4 +63,8 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 }).addOnFailureListener(e -> Toast.makeText(HomeActivity.this, "Fail to load data..", Toast.LENGTH_SHORT).show());
     }
+
+
+
+
 }
