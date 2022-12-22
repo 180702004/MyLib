@@ -1,11 +1,13 @@
 package com.example.mylib;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,11 +23,15 @@ public class HomeActivity extends AppCompatActivity {
     ArrayList<Library> libraryArrayList;
     FirebaseFirestore db;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().setTitle(R.string.app_name);
+        //Size might be a problem, refactoring needed for to show the logo on action bar.
+        //getSupportActionBar().setLogo(R.drawable.logo);
+        //getSupportActionBar().setDisplayUseLogoEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
         listView = (ListView)findViewById(R.id.listViewOfLibraries);
         libraryArrayList = new ArrayList<>();
         db = FirebaseFirestore.getInstance();
