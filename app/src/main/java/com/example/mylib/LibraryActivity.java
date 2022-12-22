@@ -1,10 +1,10 @@
 package com.example.mylib;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +18,10 @@ public class LibraryActivity extends AppCompatActivity {
 
     Button infoFragment, bookFragment;
 
+    Boolean isAboutFragmentOn;
+
     FragmentLibraryBooks flb = new FragmentLibraryBooks();
+    FragmentLibraryAbout fla = new FragmentLibraryAbout();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -42,7 +45,9 @@ public class LibraryActivity extends AppCompatActivity {
         infoFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadInfoFragment(libraryPassed);
+                if(!isAboutFragmentOn){
+                    loadInfoFragment(libraryPassed);
+                }
             }
         });
 
@@ -50,6 +55,7 @@ public class LibraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3,flb).commit();
+                isAboutFragmentOn = false;
             }
         });
     }
@@ -59,8 +65,9 @@ public class LibraryActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().remove(flb).commit();
         }
         FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-        FragmentLibraryAbout fragobj = FragmentLibraryAbout.newInstance(libraryPassed.getAbout(), libraryPassed.getWorkingHours(), libraryPassed.getContactNumber(), libraryPassed.getMembershipNeeded(), libraryPassed.getStudyingAreaIncluded());
-        fts.add(R.id.fragmentContainerView3,fragobj);
+        fla = FragmentLibraryAbout.newInstance(libraryPassed.getAbout(), libraryPassed.getWorkingHours(), libraryPassed.getContactNumber(), libraryPassed.getMembershipNeeded(), libraryPassed.getStudyingAreaIncluded());
+        fts.add(R.id.fragmentContainerView3,fla);
+        isAboutFragmentOn = true;
         fts.commit();
     }
 
