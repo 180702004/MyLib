@@ -1,12 +1,14 @@
 package com.example.mylib;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,7 +19,6 @@ import com.bumptech.glide.Glide;
 public class LibraryActivity extends AppCompatActivity {
 
     Button infoFragment, bookFragment;
-
     Boolean isAboutFragmentOn;
 
     FragmentLibraryBooks flb = new FragmentLibraryBooks();
@@ -36,7 +37,11 @@ public class LibraryActivity extends AppCompatActivity {
 
         TextView libraryFullName = this.findViewById(R.id.libraryName);
         ImageView imgView = this.findViewById(R.id.imageView);
-        Glide.with(getApplicationContext()).load(libraryPassed.getImagePath()).into(imgView);
+        // Instead of glide we will use firebase storage
+        // Glide.with(getApplicationContext()).load(libraryPassed.getImagePath()).into(imgView);
+        String imgPath = (String)libraryPassed.getImagePath();
+        Log.d("Firebase", "image path = " + imgPath);
+        new DownloadImageTask(imgView, libraryPassed.getImagePath()).execute();
 
         libraryFullName.setText(libraryPassed.getFullName());
 

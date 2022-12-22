@@ -37,14 +37,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-
-
             }
         });
-
-
-
-
     }
 
     private void loadDataInListview() {
@@ -63,8 +57,4 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 }).addOnFailureListener(e -> Toast.makeText(HomeActivity.this, "Fail to load data..", Toast.LENGTH_SHORT).show());
     }
-
-
-
-
 }

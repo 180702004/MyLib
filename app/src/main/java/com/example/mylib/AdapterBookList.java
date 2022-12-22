@@ -15,8 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 
 public class AdapterBookList extends ArrayAdapter<Book> {
@@ -29,29 +27,47 @@ public class AdapterBookList extends ArrayAdapter<Book> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItemView = convertView;
-        if (listItemView == null) {
+        //To not display different book cover, we disabled this null check.
+        //if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.bookslistviewitem, parent, false);
-        }
+        //}
         Book book = getItem(position);
         TextView titleOfBook = listItemView.findViewById(R.id.titleOfBook);
         TextView authorOfBook = listItemView.findViewById(R.id.authorOfBook);
         Button buttonToShowBookAvailability = listItemView.findViewById(R.id.isAvailable);
-
-        //ImageView imgView = listItemView.findViewById(R.id.photoOfLibrary);
-        titleOfBook.setText(book.getTitle());
+        ImageView imgView = listItemView.findViewById(R.id.photoOfBook);
+        imgView.setImageResource(R.drawable.book_default_image);
+        new DownloadImageTask(imgView, book.getImagePath()).execute();
+        titleOfBook.setText(book.getBookTitle());
         authorOfBook.setText(book.getAuthor());
         if(book.isAvailable()){
             buttonToShowBookAvailability.setBackgroundColor(Color.GREEN);
         } else {
             buttonToShowBookAvailability.setBackgroundColor(Color.RED);
         }
-        //Glide.with(getContext()).load(book.getImagePath()).into(imgView);
+        //bindView(listItemView, getContext(), position);
         listItemView.setOnClickListener(v -> {
             //Intent intentLibActivity = new Intent(getContext(),FragmentLibraryBooks.class);
             //intentLibActivity.putExtra("class", book);
             //getContext().startActivity(intentLibActivity);
-            Toast.makeText(getContext(), book.getTitle() + "Clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), book.getBookTitle() + "Clicked", Toast.LENGTH_SHORT).show();
         });
         return listItemView;
+    }
+
+    // Another try out to displaying different photo of book.
+    public void bindView(View view, Context context, int position) {
+        ImageView imageView = view.findViewById(R.id.photoOfBook);
+        imageView.setImageResource(R.drawable.book_default_image);
+
+        Book book = getItem(position);
+
+        TextView titleView = view.findViewById(R.id.titleOfBook);
+        titleView.setText(book.getBookTitle());
+
+        TextView authorView = view.findViewById(R.id.authorOfBook);
+        authorView.setText(book.getAuthor());
+
+        new DownloadImageTask(imageView, book.getImagePath()).execute();
     }
 }

@@ -2,6 +2,7 @@ package com.example.mylib;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class LibraryListAdapter extends ArrayAdapter<Library> {
         TextView libraryFullName = listItemView.findViewById(R.id.fullNameOfLibrary);
         ImageView imgView = listItemView.findViewById(R.id.photoOfLibrary);
         libraryFullName.setText(library.getFullName());
-        Glide.with(getContext()).load(library.getImagePath()).into(imgView);
+        new DownloadImageTask(imgView, library.getImagePath()).execute();
         listItemView.setOnClickListener(v -> {
             Intent intentLibActivity = new Intent(getContext(),LibraryActivity.class);
             intentLibActivity.putExtra("class", library);

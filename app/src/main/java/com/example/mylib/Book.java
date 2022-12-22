@@ -9,10 +9,18 @@ public class Book implements Serializable {
     private String about;
     private String author;
     private boolean available;
-    private List<String> genres;
-    private String title;
+    private String genre;
+    private String bookTitle;
     private String imagePath;
     private Timestamp borrowedUntil;
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
 
     public Timestamp getBorrowedUntil() {
         return borrowedUntil;
@@ -46,20 +54,12 @@ public class Book implements Serializable {
         this.available = available;
     }
 
-    public List<String> getGenres() {
-        return genres;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenres(List<String> genres) {
-        this.genres = genres;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public void setGenre(String genres) {
+        this.genre = genre;
     }
 
     public String getImagePath() {
