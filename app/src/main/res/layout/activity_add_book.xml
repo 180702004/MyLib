@@ -1,124 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddBookActivity">
 
-  <TextView
-      android:id="@+id/bookInfo"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:text="Book Information"
-      android:textSize="30sp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.111" />
-
-  <EditText
-      android:id="@+id/bookTitle"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:minHeight="48dp"
-      android:hint="Title"
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
       android:gravity="center"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.231" />
+      app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/bookInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="0.6"
+        android:gravity="center"
+        android:text="Book Information"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/bookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/bookInfo"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/bookInfo"
+        app:layout_constraintTop_toBottomOf="@+id/bookInfo" />
 
 
-  <EditText
-      android:id="@+id/imagePath"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:minHeight="48dp"
-      android:gravity="center"
-      android:hint="Image Path"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.341" />
+    <EditText
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Author"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/bookTitle"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/bookTitle"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitle" />
 
-  <EditText
-      android:id="@+id/genre"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:minHeight="48dp"
-      android:gravity="center"
-      android:hint="Genre"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.452" />
+    <EditText
+        android:id="@+id/genre"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Genre"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/about"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/about"
+        app:layout_constraintTop_toBottomOf="@+id/about" />
 
-  <EditText
-      android:id="@+id/author"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:minHeight="48dp"
-      android:gravity="center"
-      android:hint="Author"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.563" />
 
-  <EditText
-      android:id="@+id/about"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:minHeight="48dp"
-      android:hint="About"
-      android:gravity="center"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.683" />
+    <EditText
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="About"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/author"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/author"
+        app:layout_constraintTop_toBottomOf="@+id/author" />
 
-  <EditText
-      android:id="@+id/idEdtDate"
-      android:layout_width="213dp"
-      android:layout_height="45dp"
-      android:layout_centerInParent="true"
-      android:layout_margin="20dp"
-      android:gravity="center"
-      android:clickable="false"
-      android:cursorVisible="false"
-      android:focusable="false"
-      android:focusableInTouchMode="false"
-      android:hint="Borrow Until"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.505"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.806" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="213dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:contentDescription="@string/librarySpinner"
+        app:layout_constraintEnd_toEndOf="@+id/genre"
+        app:layout_constraintStart_toStartOf="@+id/genre"
+        app:layout_constraintTop_toBottomOf="@+id/genre"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/isBookAlreadyBorrowed"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Is book already borrowed?"
+        android:layout_weight="0.7"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <EditText
+        android:id="@+id/idEdtDate"
+        android:layout_width="213dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:hint="Borrowed Until"
+        android:layout_weight="0.7"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <Button
+        android:id="@+id/selectPhotoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Photo of The Book"
+        android:onClick="onSelectPhotoButtonClick" />
+
+    <Button
+        android:id="@+id/btnAddBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Book"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/idEdtDate"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/idEdtDate"
+        app:layout_constraintTop_toBottomOf="@+id/idEdtDate" />
+
+
+  </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
