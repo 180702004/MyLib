@@ -38,13 +38,22 @@ public class HomeActivity extends AppCompatActivity {
         loadDataInListview();
 
         Button btn = (Button)findViewById(R.id.loginButton);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             }
         });
+
+
+        Button addButton = (Button)findViewById(R.id.addBookButton);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, AddBookActivity.class));
+            }
+        });
+
     }
 
     private void loadDataInListview() {
