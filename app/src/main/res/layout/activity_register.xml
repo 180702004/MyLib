@@ -20,31 +20,32 @@
         app:layout_constraintVertical_bias="0.142" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:gravity="center"
+        android:hint="Name Surname"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255"
-        android:hint="Name Surname"
-        android:gravity="center"
 
 
-        />
+        app:layout_constraintVertical_bias="0.255" />
 
     <EditText
-        android:id="@+id/phoneNumber"
+        android:id="@+id/editTextPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="phone"
-        android:hint="Phone Number"
         android:gravity="center"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -53,13 +54,14 @@
         app:layout_constraintVertical_bias="0.358" />
 
     <EditText
-        android:id="@+id/EmailAddress2"
+        android:id="@+id/editTextEmailReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -68,13 +70,14 @@
         app:layout_constraintVertical_bias="0.453" />
 
     <EditText
-        android:id="@+id/passwordRegister"
+        android:id="@+id/editTextPasswordReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
         android:hint="Password"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -83,13 +86,14 @@
         app:layout_constraintVertical_bias="0.551" />
 
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/editTextConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
         android:gravity="center"
         android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -98,10 +102,10 @@
         app:layout_constraintVertical_bias="0.653" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxOwner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm Terms"
+        android:text="I am a library owner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +113,7 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <Button
-        android:id="@+id/confirmTerms"
+        android:id="@+id/btnCreateAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Account"
