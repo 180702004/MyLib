@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewBookActivity">
+
+    <TextView
+        android:id="@+id/bookAuthorInfo2"
+        android:layout_width="178dp"
+        android:layout_height="53dp"
+        android:gravity="center"
+        android:text="@string/author"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bookTitleInfo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/bookTitleInfo"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitleInfo"
+        app:layout_constraintVertical_bias="0.148" />
+
+    <ImageView
+        android:id="@+id/photoInfo"
+        android:layout_width="201dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/book_default_image"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/bookTitleInfo"
+        android:layout_width="176dp"
+        android:layout_height="99dp"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <TextView
+        android:id="@+id/bookGenreInfo"
+        android:layout_width="178dp"
+        android:layout_height="53dp"
+        android:gravity="center"
+        android:text="@string/genre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bookTitleInfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bookTitleInfo"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitleInfo"
+        app:layout_constraintVertical_bias="0.031" />
+
+
+    <TextView
+        android:id="@+id/BorrowedInfo"
+        android:layout_width="386dp"
+        android:layout_height="43dp"
+        android:gravity="center"
+        android:text="@string/borrowed_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bookAuthorInfo2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <TextView
+        android:id="@+id/aboutInfo"
+        android:layout_width="387dp"
+        android:layout_height="397dp"
+        android:gravity="center"
+        android:text="@string/about"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/BorrowedInfo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/BorrowedInfo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
