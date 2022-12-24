@@ -22,21 +22,18 @@ public class FragmentLibraryBooks extends Fragment {
     FirebaseFirestore db;
     AdapterBookList bookListAdapter;
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "libraryId";
 
-    private String mParam1;
-    private String mParam2;
+    private String libraryIdPassed;
 
     public FragmentLibraryBooks() {
         // Required empty public constructor
     }
 
-    public static FragmentLibraryBooks newInstance(String param1, String param2) {
+    public static FragmentLibraryBooks newInstance(String libraryIdPassed) {
         FragmentLibraryBooks fragment = new FragmentLibraryBooks();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PARAM1, libraryIdPassed);
         fragment.setArguments(args);
         return fragment;
     }
@@ -45,8 +42,7 @@ public class FragmentLibraryBooks extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            libraryIdPassed = getArguments().getString(ARG_PARAM1);
         }
     }
 
@@ -71,8 +67,10 @@ public class FragmentLibraryBooks extends Fragment {
                         List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                         for (DocumentSnapshot d : list) {
                             Book book = d.toObject(Book.class);
-                            bookArrayList.add(book);
-                            bookListAdapter.notifyDataSetChanged();
+                            if(book.getLibraryId() == null || libraryIdPassed.equals(book.getLibraryId())){
+                                bookArrayList.add(book);
+                                bookListAdapter.notifyDataSetChanged();
+                            }
                         }
                         listView.setAdapter(bookListAdapter);
                     } else {

@@ -59,8 +59,10 @@ public class LibraryActivity extends AppCompatActivity {
         bookFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3,flb).commit();
+                FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
+                flb = FragmentLibraryBooks.newInstance(libraryPassed.getId());
                 isAboutFragmentOn = false;
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3,flb).commit();
             }
         });
     }
