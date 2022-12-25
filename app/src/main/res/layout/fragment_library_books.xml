@@ -5,9 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".FragmentLibraryBooks">
 
-    <ListView
-        android:id="@+id/listViewOfBooks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/booksHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-3dp"
+            android:background="@color/purple_500"
+            android:gravity="center"
+            android:scrollbars="vertical"
+            android:text="Books"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listViewOfBooks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ListView>
+    </LinearLayout>
 
 </FrameLayout>

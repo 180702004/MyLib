@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().setTitle(R.string.app_name);
-        //Size might be a problem, refactoring needed for to show the logo on action bar.
+        //Try out to show the logo on the action bar.
         //getSupportActionBar().setLogo(R.drawable.logo);
         //getSupportActionBar().setDisplayUseLogoEnabled(true);
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -94,9 +94,9 @@ public class HomeActivity extends AppCompatActivity {
                             Boolean isUserOwnerOfLibrary = user.getLibraryOwner();
                             if(isUserOwnerOfLibrary){
                                 userBtn.setVisibility(View.VISIBLE);
-                                Toast.makeText(HomeActivity.this, "Owner of a library, you can add book.", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(HomeActivity.this, "Owner of a library, you can add book.", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(HomeActivity.this, "Non owner, you can reserve a book.", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(HomeActivity.this, "Non owner, you can reserve a book.", Toast.LENGTH_SHORT).show();
                                 userBtn.setVisibility(View.INVISIBLE);
                             }
                         } else {

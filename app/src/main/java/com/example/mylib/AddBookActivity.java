@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -147,24 +149,28 @@ public class AddBookActivity extends AppCompatActivity {
                 boolean bookBorrowed = ((CheckBox) findViewById(R.id.isBookAlreadyBorrowed)).isChecked();
 
                 if(selectedImageUri != null){
+                    Log.d("TAG", selectedImageUri.toString());
                     FirebaseStorage storage = FirebaseStorage.getInstance();
                     StorageReference storageRef = storage.getReference();
                     StorageReference photoRef = storageRef.child("imgBook/" + selectedImageUri.getLastPathSegment());
                     // Upload the photo to Firebase Storage
-                    photoRef.putFile(selectedImageUri)
-                            .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                    // Get the download URL for the photo
-                                    photoRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
-                                            //photoPath = "imgBook/" + selectedImageUri.getLastPathSegment();
-                                            //Toast.makeText(AddBookActivity.this, photoPath, Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                                }
-                            });
+                    if (photoRef != null) {
+                        photoRef.putFile(selectedImageUri)
+                                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        // Successful upload
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                        // Handle unsuccessful upload
+                                    }
+                                });
+                    } else {
+                        // Handle null photoRef
+                    }
                 }
 
                 if(selectedImageUri != null){

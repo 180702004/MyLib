@@ -47,10 +47,9 @@ public class AdapterBookList extends ArrayAdapter<Book> {
         }
         //bindView(listItemView, getContext(), position);
         listItemView.setOnClickListener(v -> {
-            //Intent intentLibActivity = new Intent(getContext(),FragmentLibraryBooks.class);
-            //intentLibActivity.putExtra("class", book);
-            //getContext().startActivity(intentLibActivity);
-            Toast.makeText(getContext(), book.getBookTitle() + "Clicked", Toast.LENGTH_SHORT).show();
+            Intent intentLibActivity = new Intent(getContext(),ViewBookActivity.class);
+            intentLibActivity.putExtra("class", book);
+            getContext().startActivity(intentLibActivity);
         });
         return listItemView;
     }

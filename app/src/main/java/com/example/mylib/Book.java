@@ -12,7 +12,7 @@ public class Book implements Serializable {
     private String genre;
     private String bookTitle;
     private String imagePath;
-    private Timestamp borrowedUntil;
+    private String borrowedUntil;
     private String libraryId;
 
     public Book(){
@@ -45,11 +45,11 @@ public class Book implements Serializable {
         this.bookTitle = bookTitle;
     }
 
-    public Timestamp getBorrowedUntil() {
+    public String getBorrowedUntil() {
         return borrowedUntil;
     }
 
-    public void setBorrowedUntil(Timestamp borrowedUntil) {
+    public void setBorrowedUntil(String borrowedUntil) {
         this.borrowedUntil = borrowedUntil;
     }
 

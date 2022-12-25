@@ -19,5 +19,5 @@
     <string name="todo">TODO</string>
     <string name="genre">genre</string>
     <string name="about">About</string>
-    <string name="borrowed_info">Borrowed Info</string>
+    <string name="about_book">About Book</string>
 </resources>

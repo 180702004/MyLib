@@ -39,25 +39,29 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_weight="1"
+                    android:textColor="@color/purple_500"
                     android:text="@string/title"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/bookAuthorInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/purple_500"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:text="@string/author"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/bookGenreInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/purple_500"
                     android:gravity="center"
                     android:layout_weight="1"
-                    android:text="@string/genre" />
+                    android:text="@string/genre"
+                    android:textSize="20sp"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -67,14 +71,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/borrowed_info" />
+            android:background="@color/purple_500"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="@string/about_book" />
 
         <TextView
             android:id="@+id/bookAboutInfo"
+            android:layout_gravity="top"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
+            android:layout_height="200dp"
+            android:gravity="top"
+            android:textAlignment="gravity"
+            android:layout_weight="1"
             android:text="@string/about" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reserve the book for a day" />
     </LinearLayout>
 
 

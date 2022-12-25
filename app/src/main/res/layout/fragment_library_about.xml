@@ -19,13 +19,15 @@
                 android:gravity="center"
                 android:scrollbars="vertical"
                 android:text="@string/about_library"
+                android:background="@color/purple_500"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/libraryAbout"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="180dp"
                 android:gravity="center"
                 android:text="" />
 
@@ -34,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <TextView
+                <!-- <TextView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -44,7 +46,7 @@
                 <TextView
                     android:id="@+id/libraryLocation"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"/>  -->
 
             </LinearLayout>
 

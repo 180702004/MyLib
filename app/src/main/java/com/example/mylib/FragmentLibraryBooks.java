@@ -67,7 +67,8 @@ public class FragmentLibraryBooks extends Fragment {
                         List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                         for (DocumentSnapshot d : list) {
                             Book book = d.toObject(Book.class);
-                            if(book.getLibraryId() == null || libraryIdPassed.equals(book.getLibraryId())){
+                            // book.getLibraryId() == null ||
+                            if( libraryIdPassed.equals(book.getLibraryId())){
                                 bookArrayList.add(book);
                                 bookListAdapter.notifyDataSetChanged();
                             }
