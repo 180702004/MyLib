@@ -6,9 +6,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -41,10 +45,20 @@ public class ViewBookActivity extends AppCompatActivity {
             new DownloadImageTask(imgView, book.getImagePath()).execute();
         }
 
+        Button reserveBookButton = (Button) findViewById(R.id.button);
         if(!book.isAvailable()){
-            Button reserveBookButton = (Button) findViewById(R.id.button);
             reserveBookButton.setEnabled(false);
             reserveBookButton.setText("Book is not available for reserve");
         }
+
+        reserveBookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(book.isAvailable()){
+                    reserveBookButton.setEnabled(false);
+                    reserveBookButton.setText("You've reserved the book for a day");
+                }
+            }
+        });
     }
 }
