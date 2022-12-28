@@ -65,6 +65,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //Aylin Duran
+
         Button addButton = (Button)findViewById(R.id.addBookButton);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override

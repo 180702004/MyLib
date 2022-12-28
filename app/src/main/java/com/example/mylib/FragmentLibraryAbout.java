@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+//Aylin Duran
+
 public class FragmentLibraryAbout extends Fragment {
 
     String about;

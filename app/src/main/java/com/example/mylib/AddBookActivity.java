@@ -35,6 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class AddBookActivity extends AppCompatActivity {
     private Uri selectedImageUri;
     private boolean mDateEditPopulated = false;
@@ -84,6 +85,8 @@ public class AddBookActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+        //Aylin Duran
 
         dateEdt.setOnClickListener(new View.OnClickListener() {
             @Override

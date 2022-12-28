@@ -5,6 +5,8 @@ import com.google.firebase.Timestamp;
 import java.io.Serializable;
 import java.util.List;
 
+//Aylin Duran
+
 public class Book implements Serializable {
     private String about;
     private String author;
