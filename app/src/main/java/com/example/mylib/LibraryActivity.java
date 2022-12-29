@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+// Emre - 180702004
+
 public class LibraryActivity extends AppCompatActivity {
 
     Button infoFragment, bookFragment;

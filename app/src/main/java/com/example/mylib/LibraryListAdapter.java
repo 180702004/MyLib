@@ -17,6 +17,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+// Emre - 180702004
+
 public class LibraryListAdapter extends ArrayAdapter<Library> {
 
     public LibraryListAdapter(@NonNull Context context, ArrayList<Library> LibraryArrayList) {

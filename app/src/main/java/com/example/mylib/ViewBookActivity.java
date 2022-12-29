@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+// Emre 180702004
+
 public class ViewBookActivity extends AppCompatActivity {
     Book book;
 

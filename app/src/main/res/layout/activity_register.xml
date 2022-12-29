@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+    <!-- -
+        Emre 180702004
+    <!- -->
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="115dp"

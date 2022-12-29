@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".LibraryActivity">
 
+    <!-- -
+    Emre 180702004
+    <!- -->
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="96dp"

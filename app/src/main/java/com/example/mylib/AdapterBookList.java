@@ -17,6 +17,8 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+// Emre - 180702004
+
 public class AdapterBookList extends ArrayAdapter<Book> {
 
     public AdapterBookList(@NonNull Context context, ArrayList<Book> BookArrayList) {

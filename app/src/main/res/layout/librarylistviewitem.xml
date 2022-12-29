@@ -8,6 +8,10 @@
     android:padding="2dp"
     app:cardElevation="3dp">
 
+    <!-- -
+        Emre 180702004
+    <!- -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

@@ -25,6 +25,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+// Emre 180702004
+
 public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
